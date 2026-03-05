@@ -1,5 +1,7 @@
 {
   "home": {
     "title": "Hola"
-  }
+  },
+    "meta": { "title": "Preparcial español", 
+  "description": "Hola, soy una descripción" }  
 }

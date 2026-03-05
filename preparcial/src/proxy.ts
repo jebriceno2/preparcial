@@ -1,5 +1,5 @@
 // src/proxy.ts
-import {NextResponse, type NextRequest} from 'next/server';
+import {NextResponse, NextRequest } from 'next/server';
 
 const locales = ['es', 'en'] as const;
 const defaultLocale = 'en';
@@ -11,7 +11,7 @@ function getLocale(request: NextRequest) {
 
   const accept = request.headers.get('accept-language')?.toLowerCase() || '';
   if (accept.startsWith('en')) return 'en';
-
+  if (accept.startsWith('es')) return 'es';
   return defaultLocale;
 }
 
@@ -22,10 +22,25 @@ export function proxy(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  if (hasLocale)  return;
+  if (hasLocale) {
+    const currentLocale = pathname.split('/')[1];
+
+    const response = NextResponse.next();
+    if (currentLocale === 'es' || currentLocale === 'en') {
+      response.cookies.set(cookieName, currentLocale, {
+        path: '/',
+        maxAge: 60 * 60 * 24 * 365
+      });
+    }
+
+    return response;
+  }
+
   const locale = getLocale(request);
   request.nextUrl.pathname = `/${locale}${pathname}`; 
-  return NextResponse.redirect(request.nextUrl);
+  const response = NextResponse.redirect(request.nextUrl);
+  response.cookies.set(cookieName, locale, { path: '/', maxAge: 60 * 60 * 24 * 365 });
+  return response;
 }
 export const config = {
   matcher: [

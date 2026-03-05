@@ -1,5 +1,8 @@
 {
-  "home": {
+  "home": 
+  {
     "title": "Hello"
-  }
+  },
+  "meta": { "title": "Preparcial english", 
+  "description": "Hello I am a descriptions" }
 }
