@@ -1,9 +1,9 @@
 {
   "home": {
-    "title": "Hola",
+    "title": "Personas de Harry Potter",
     "view": "ver mas"
   },
-    "meta": { "title": "Preparcial español", 
+    "meta": { "title": "Listado de personajes de Harry Potter", 
   "description": "Hola, soy una descripción" },
   "catalog": {
     "title": "Catálogo",

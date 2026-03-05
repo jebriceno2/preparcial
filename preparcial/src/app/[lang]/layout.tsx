@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { notFound } from "next/navigation"; 
 import { getDictionary, hasLocale } from "./dictionaries";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const locales= ['es', 'en'];
 
@@ -46,9 +48,10 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <Header></Header>
+      <main>{children}</main>
+      <Footer></Footer>
       </body>
     </html>
   );

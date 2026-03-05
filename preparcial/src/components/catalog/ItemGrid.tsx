@@ -1,31 +1,26 @@
 import ItemCard from './ItemCard';
 
 type Item = {
-  id: string | number;
-  title: string;
-  subtitle?: string;
-  description?: string;
-  image?: string;
+  id: string
+  name: string;
+  image: string;
 };
 
 type ItemGridProps = {
   items: Item[];
-  lang: string;
+  lang: string
 };
 
-export default function ItemGrid({ items, lang }: ItemGridProps) {
+export default function ItemGrid({ items, lang}: ItemGridProps) {
   return (
-    <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <section className="grid grid-cols-3  place-items-center">
       {items.map((item) => (
         <ItemCard
-              key={item.id}
-              id={item.id}
-              lang={lang}
-              title={item.title} 
-              image={item.image}
-              subtitle={item.subtitle}
-              description={item.description}
-        />
+          key={item.id}
+          id={item.id}
+          name={item.name}
+          image={item.image} 
+          lang={lang}        />
       ))}
     </section>
   );

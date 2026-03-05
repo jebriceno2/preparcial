@@ -2,12 +2,16 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { hasLocale, getDictionary } from '../../dictionaries';
 import { getJson } from '@/lib/api';
+import Image from 'next/image';
 
 type ApiPost = {
-  id: number;
-  userId: number;
-  title: string;
-  body: string;
+  id: string;
+  image: string;
+  house: string;
+  name: string;
+  wand: string;
+  wood: string;
+  length: number;
 };
 
 export default async function ItemDetailPage({
@@ -22,7 +26,7 @@ export default async function ItemDetailPage({
   const dictionary = await getDictionary(lang);
 
   const item = await getJson<ApiPost>(
-    `https://jsonplaceholder.typicode.com/posts/${id}`
+    `https://hp-api.onrender.com/api/character/${id}`
   );
 
   return (
@@ -32,9 +36,15 @@ export default async function ItemDetailPage({
       </Link>
 
       <article className="rounded-xl border p-6 shadow-sm">
-        <h1 className="text-3xl font-bold">{item.title}</h1>
-        <p className="mt-4">{item.body}</p>
+        <h1 className="text-3xl font-bold">{item.name}</h1>
+        <p className="mt-4">{item.name}</p>
         
+        <Image
+            src={item.image}
+            alt={item.name}
+            className="bg-white"
+            width={200} height={200}
+          />
       </article>
     </main>
   );
