@@ -25,10 +25,12 @@ export default async function ItemDetailPage({
 
   const dictionary = await getDictionary(lang);
 
-  const item = await getJson<ApiPost>(
+  const data = await getJson<ApiPost>(
     `https://hp-api.onrender.com/api/character/${id}`
-  );
 
+  );
+  const item=data[0]
+  console.log(item);
   return (
     <main className="mx-auto min-h-screen max-w-4xl p-8">
       <Link href={`/${lang}`} className="mb-6 inline-block underline">
