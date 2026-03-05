@@ -47,6 +47,11 @@ export default async function ItemDetailPage({
             className="bg-white"
             width={200} height={200}
           />
+        <p className="text-3xl font-bold">{item.house}</p>
+
+        <p className="text-3xl font-bold">{item.wood}</p>
+
+
       </article>
     </main>
   );
