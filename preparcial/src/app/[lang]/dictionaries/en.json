@@ -1,8 +1,14 @@
 {
   "home": 
   {
-    "title": "Hello"
+    "title": "Helloa",
+    "view": "watch more"
   },
   "meta": { "title": "Preparcial english", 
-  "description": "Hello I am a descriptions" }
+  "description": "Hello I am a descriptions" },
+  "catalog": {
+    "title": "Catalog",
+    "description": "This is the catalog page",
+    "back": "Back to home"
+  }
 }
