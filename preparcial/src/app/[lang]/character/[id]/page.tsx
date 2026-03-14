@@ -1,17 +1,19 @@
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { hasLocale, getDictionary } from '../../dictionaries';
 import { getJson } from '@/lib/api';
-import Image from 'next/image';
+import CharacterDetail from '@/components/catalog/CharacterDetail';
 
-type ApiPost = {
+type ApiCharacter = {
   id: string;
   image: string;
   house: string;
   name: string;
-  wand: string;
-  wood: string;
-  length: number;
+  gender: string;
+  wand: {
+    wood: string;
+    core: string;
+    length: number | null;
+  };
 };
 
 export default async function ItemDetailPage({
@@ -25,34 +27,18 @@ export default async function ItemDetailPage({
 
   const dictionary = await getDictionary(lang);
 
-  const data = await getJson<ApiPost>(
+  const data = await getJson<ApiCharacter[]>(
     `https://hp-api.onrender.com/api/character/${id}`
-
   );
-  const item=data[0]
-  console.log(item);
+  const item = data[0];
+
+  if (!item) notFound();
+
   return (
-    <main className="mx-auto min-h-screen max-w-4xl p-8">
-      <Link href={`/${lang}`} className="mb-6 inline-block underline">
-        {dictionary.catalog.back}
-      </Link>
-
-      <article className="rounded-xl border p-6 shadow-sm">
-        <h1 className="text-3xl font-bold">{item.name}</h1>
-        <p className="mt-4">{item.name}</p>
-        
-        <Image
-            src={item.image}
-            alt={item.name}
-            className="bg-white"
-            width={200} height={200}
-          />
-        <p className="text-3xl font-bold">{item.house}</p>
-
-        <p className="text-3xl font-bold">{item.wood}</p>
-
-
-      </article>
-    </main>
+    <CharacterDetail
+      lang={lang}
+      dictionary={dictionary.detail}
+      character={item}
+    />
   );
 }

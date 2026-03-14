@@ -1,13 +1,28 @@
 {
-  "home": {
-    "title": "Personas de Harry Potter",
-    "view": "ver mas"
+  "header": {
+    "logoAlt": "Logo de Harry Potter"
   },
-    "meta": { "title": "Listado de personajes de Harry Potter", 
-  "description": "Hola, soy una descripción" },
-  "catalog": {
-    "title": "Catálogo",
-    "description": "Esta es la página del catálogo",
-    "back": "Volver al inicio"
+  "footer": {
+    "rights": "© 2026 Harry Potter App. Todos los derechos reservados.",
+    "developed": "Desarrollado para: ISIS3710"
+  },
+  "home": {
+    "title": "Personajes de Harry Potter",
+    "description": "Explora el universo mágico de Harry Potter: un listado completo de personajes con su casa, especie y datos principales."
+  },
+  "detail": {
+    "gender": "Género",
+    "house": "Casa",
+    "wand": "Varita",
+    "wood": "Madera",
+    "core": "Núcleo",
+    "length": "Longitud",
+    "back": "Volver al listado"
+  },
+  "metadata": {
+    "homeTitle": "Listado de personajes - HarryPotterApp",
+    "homeDescription": "Explora el universo mágico de Harry Potter: un listado completo de personajes con su casa, especie y datos principales.",
+    "detailTitle": "Detalle de {name} - HarryPotterApp",
+    "detailDescription": "Consulta información detallada de cada personaje del mundo mágico: casa, actor/actriz, varita, especie, ascendencia y otros datos relevantes."
   }
 }

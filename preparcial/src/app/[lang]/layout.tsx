@@ -49,7 +49,7 @@ export default async function RootLayout({
     <html lang={lang}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <Header></Header>
+      <Header lang={""}></Header>
       <main>{children}</main>
       <Footer></Footer>
       </body>

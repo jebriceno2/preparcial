@@ -1,5 +1,5 @@
 export async function getJson<T>(url: string): Promise<T> {
-  const res = await fetch(url, {cache: 'no-store'});
+  const res = await fetch(url, { cache: 'no-store' });
 
   if (!res.ok) {
     throw new Error(`Request failed: ${res.status}`);

@@ -1,14 +1,28 @@
 {
-  "home": 
-  {
-    "title": "Harry potter characters",
-    "view": "watch more"
+  "header": {
+    "logoAlt": "Harry Potter Logo"
   },
-  "meta": { "title": "List of Harry potter characters", 
-  "description": "Hello I am a descriptions" },
-  "catalog": {
-    "title": "Catalog",
-    "description": "This is the catalog page",
-    "back": "Back to home"
+  "footer": {
+    "rights": "© 2026 Harry Potter App. All rights reserved.",
+    "developed": "Developed for: ISIS3710"
+  },
+  "home": {
+    "title": "Harry Potter Characters",
+    "description": "Explore the magical universe of Harry Potter: a complete list of characters with their house, species and main data."
+  },
+  "detail": {
+    "gender": "Gender",
+    "house": "House",
+    "wand": "Wand",
+    "wood": "Wood",
+    "core": "Core",
+    "length": "Length",
+    "back": "Back to list"
+  },
+  "metadata": {
+    "homeTitle": "Character List - HarryPotterApp",
+    "homeDescription": "Explore the magical universe of Harry Potter: a complete list of characters with their house, species and main data.",
+    "detailTitle": "Detail of {name} - HarryPotterApp",
+    "detailDescription": "Check detailed information of each character from the magical world: house, actor/actress, wand, species, ancestry and other relevant data."
   }
 }

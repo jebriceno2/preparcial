@@ -7,7 +7,7 @@ type ApiUser = {
   id: string;
   name: string;
   image: string;
-  lang: string;
+  house: string;
 };
 
 export default async function Home({
@@ -22,23 +22,28 @@ export default async function Home({
   const dictionary = await getDictionary(lang);
 
   const data = await getJson<ApiUser[]>(
-    'https://hp-api.onrender.com/api/characters?limit=12'
+    'https://hp-api.onrender.com/api/characters'
   );
 
-  const items = data.map((user) => ({
+  const items = data.slice(0, 12).map((user) => ({
     id: user.id,
     name: user.name,
-    image: user.image
+    image: user.image,
+    house: user.house || 'NoHouse'
   }));
 
   return (
-    <main className="mx-auto min-h-scree  p-8 bg-[#BBCCBB]">
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold  text-center text-[#FDB608]" >{dictionary.home.title}</h1>
-        
+    <main className="mx-auto min-h-screen bg-[#e0e0e0] px-6 py-8">
+      <header className="mb-8 text-center">
+        <h1 className="text-3xl font-bold text-[#FDB608]">
+          {dictionary.home.title}
+        </h1>
+        <h1 className="text-lg font-medium">
+          {dictionary.home.description}
+        </h1>
       </header>
 
-      <ItemGrid items={items} lang={lang}/>
+      <ItemGrid items={items} lang={lang} />
     </main>
   );
 }
