@@ -22,7 +22,8 @@
   "metadata": {
     "homeTitle": "Listado de personajes - HarryPotterApp",
     "homeDescription": "Explora el universo mágico de Harry Potter: un listado completo de personajes con su casa, especie y datos principales.",
-    "detailTitle": "Detalle de {name} - HarryPotterApp",
+    "detailTitle": "Detalle de  ",
+    "detailTitle2": "- HarryPotterApp",
     "detailDescription": "Consulta información detallada de cada personaje del mundo mágico: casa, actor/actriz, varita, especie, ascendencia y otros datos relevantes."
   }
 }

@@ -30,8 +30,8 @@ export async function generateMetadata(
 
   const dict = await getDictionary(lang);
   return {
-    title: dict.meta?.title ?? "App",
-    description: dict.meta?.description ?? ""
+    title: dict.metadata?.homeTitle ?? "App",
+    description: dict.metadata?.homeDescription ?? ""
   };
 }
 export default async function RootLayout({

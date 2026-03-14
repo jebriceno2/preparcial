@@ -22,7 +22,8 @@
   "metadata": {
     "homeTitle": "Character List - HarryPotterApp",
     "homeDescription": "Explore the magical universe of Harry Potter: a complete list of characters with their house, species and main data.",
-    "detailTitle": "Detail of {name} - HarryPotterApp",
+    "detailTitle": "Detail of ",
+    "detailTitle2": "- HarryPotterApp",
     "detailDescription": "Check detailed information of each character from the magical world: house, actor/actress, wand, species, ancestry and other relevant data."
   }
 }
